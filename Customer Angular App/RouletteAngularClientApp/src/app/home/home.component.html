@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home Page</title>
+</head>
+<body>
+
+  <!-- Header Component -->
+  <app-header
+    [initialBalance]="balance">
+  </app-header>
+
+  <!-- Body Component -->
+  <div style="margin-top:5px;margin-bottom:5px;">
+      <app-body 
+        (balanceChanged) = "onBalanceChanged($event)"
+        (errorChanged) = "onErrorChanged($event)">
+      </app-body>
+  </div>
+
+  <!-- Footer Component -->
+  <app-footer style="bottom: 0; width: 100%;"
+    [error]="error"></app-footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<HTML>
+    <HEAD>
+    <STYLE>
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    .login {
+      width: 300px;
+      height: 450px;
+      border: 1px solid #CCC;
+      background: url(http://68.media.tumblr.com/2b27908fac782ca54cc2b3aff6862423/tumblr_mra3owkIhC1ro855no1_500.gif) center center no-repeat;
+      background-size: cover;
+      margin: 30px auto;
+      border-radius: 3px;
+      margin-top:50px;
+    }
+
+    .login .form {
+      width: 100%;
+      height: 100%;
+      padding: 15px 20px;;
+    }
+
+    .login .form h2 {
+      color: #FFF;
+      text-align: center;
+      font-weight: normal;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 120px;
+    }
+
+    .login .form input {
+      width: 100%;
+      height: 40px;
+      margin-top: 20px;
+      background: rgba(255,255,255,.5);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 0 15px;
+      color: #FFF;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+
+    .login .form input:focus {
+      border: 1px solid rgba(255,255,255,.8);
+      outline: none;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #DDD;
+    }
+
+    .login .form input.submit {
+      background: rgba(255,255,255,.9);
+      color: #444;
+      font-size: 15px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .alert{
+      margin-left:500px;
+      margin-right:500px;
+      margin-top:20px;
+      text-align: center;
+    }
+
+    </STYLE>
+    </HEAD>
+    <BODY>
+    <div class="login">
+      <div class="form">
+        <h2><B>WELCOME! PLEASE LOGIN.</B></h2>
+        <br><br><br><br><br>
+        <input type="text" placeholder="Unique Id" [(ngModel)]="uniqueId">
+        <input type="submit" value="Sign In" class="submit" (click)="submit()">
+      </div>
+    </div>
+    <div *ngIf='!customerExists' class="alert alert-danger" role="alert">
+        <b>ID DOES NOT EXISTS</b>
+      </div>
+    </BODY>
+    </HTML> 
